@@ -14,6 +14,7 @@ export default function Nav() {
     { label: "Index", href: "/" },
     { label: "Projects", href: "/projects" },
     { label: "Archives", href: "/archives" },
+    { label: "Contact", href: "/contact" },
   ];
 
   const NavLinks = () => (
@@ -32,9 +33,6 @@ export default function Nav() {
           {link.label}
         </Link>
       ))}
-      <button className="text-on-surface-variant hover:text-black uppercase tracking-widest">
-        Contact
-      </button>
     </>
   );
 
@@ -46,7 +44,7 @@ export default function Nav() {
             href="/"
             className="font-semibold text-lg tracking-[0.2em] text-black cursor-pointer"
           >
-            ARCHITECT.V1
+            ISHAN.DEV - ARCHITECT.V1
           </Link>
 
           <div className="hidden md:flex gap-8 items-center font-medium text-[11px] tracking-widest">
