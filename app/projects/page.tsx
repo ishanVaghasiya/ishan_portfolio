@@ -2,6 +2,7 @@
 
 import { motion } from "motion/react";
 import { ExternalLink, Calendar, MapPin, Cpu, TrendingUp, Users, Zap } from "lucide-react";
+import { getCurrentYear } from "@/lib/util";
 
 export default function ProjectsPage() {
   return (
@@ -21,7 +22,7 @@ export default function ProjectsPage() {
               </span>
               <div className="w-[1px] h-4 bg-black/10" />
               <span className="text-[10px] uppercase tracking-[0.2em] font-medium text-on-surface-variant">
-                IV — 2024
+                IV — {getCurrentYear()}
               </span>
             </div>
             <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tighter text-black leading-none">

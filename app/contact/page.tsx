@@ -323,7 +323,7 @@ export default function ContactPage() {
                 <span className="text-[10px] uppercase tracking-widest font-bold">Currently Available</span>
               </div>
               <p className="text-white/60 text-xs leading-relaxed mt-1">
-                Open to full-time remote roles · React / Next.js · Available immediately.
+                Open to full-time remote roles · Modern web platforms · Available immediately.
               </p>
               <p className="text-white/40 text-[10px] mt-2 uppercase tracking-widest">
                 Response within 24 hours · Worldwide

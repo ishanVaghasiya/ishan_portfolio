@@ -2,6 +2,7 @@
 
 import { motion } from "motion/react";
 import { Bot, Code2, TestTube, GitMerge } from "lucide-react";
+import { getCurrentYear, getExperienceYears } from "@/lib/util";
 
 export default function ArchivesPage() {
   return (
@@ -17,7 +18,7 @@ export default function ArchivesPage() {
           <div>
             <div className="flex items-center gap-4 mb-4">
               <span className="text-[10px] uppercase tracking-widest text-on-surface-variant font-medium">
-                CV · IV-2024
+                CV · IV-{getCurrentYear()}
               </span>
               <div className="h-px w-12 bg-black/10" />
               <span className="text-[10px] uppercase tracking-widest text-on-surface-variant font-medium">
@@ -51,7 +52,7 @@ export default function ArchivesPage() {
               Profile
             </h2>
             <p className="text-on-surface-variant leading-relaxed text-sm">
-              Lead Frontend Architect with 5 years shipping production-grade React/Next.js systems
+              Lead Frontend Architect with {getExperienceYears()} years shipping production-grade modern web systems
               at scale. I've built UIs serving <strong className="text-black">500k+ monthly users</strong>,
               reduced load times by <strong className="text-black">30%</strong>, and currently lead a team
               of <strong className="text-black">12 engineers</strong>. I integrate AI tooling into every delivery
@@ -237,7 +238,7 @@ export default function ArchivesPage() {
             {[
               {
                 company: "ONROIS",
-                role: "Lead React Developer",
+                role: "Lead Frontend Developer",
                 period: "Dec 2024 — PRESENT",
                 location: "Surat",
                 points: [
@@ -268,7 +269,7 @@ export default function ArchivesPage() {
                 period: "Jul 2021 — Oct 2021",
                 location: "Surat",
                 points: [
-                  "Built responsive React/Next.js interfaces with TypeScript — first production-grade TS experience.",
+                  "Built responsive modern frontend interfaces with TypeScript — first production-grade TS experience.",
                   "Improved average project turnaround time by 15% through streamlined component reuse patterns.",
                 ],
               },
@@ -278,7 +279,7 @@ export default function ArchivesPage() {
                 period: "Mar 2021 — Jul 2021",
                 location: "Surat",
                 points: [
-                  "First production exposure to React.js, HTML/CSS, JavaScript, and Git workflows.",
+                  "First production exposure to modern frontend development, HTML/CSS, JavaScript, and Git workflows.",
                   "Contributed to Agile scrum sprints — improved team collaboration score by 20%.",
                 ],
               },

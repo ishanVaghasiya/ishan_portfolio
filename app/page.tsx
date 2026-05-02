@@ -3,6 +3,7 @@
 import { motion } from "motion/react";
 import { ArrowRight, Zap, Users, TrendingUp, Clock, Bot, Code2, GitMerge, TestTube } from "lucide-react";
 import Link from "next/link";
+import { getExperienceLabel } from "@/lib/util";
 
 const FADE_UP = (delay = 0) => ({
   initial: { opacity: 0, y: 24 },
@@ -38,7 +39,7 @@ const PROOF_STATS = [
   },
   {
     icon: <Clock className="w-4 h-4" />,
-    value: "5 Yrs",
+    value: getExperienceLabel(),
     label: "Production Experience",
     context: "React · Next.js · TypeScript — intern to Lead Architect",
   },
@@ -86,7 +87,7 @@ export default function IndexPage() {
             </span>
             <div className="w-[1px] h-4 bg-black/15" />
             <span className="text-[10px] uppercase tracking-[0.3em] font-semibold text-on-surface-variant">
-              React · Next.js · TypeScript
+              Modern frontend platforms · TypeScript
             </span>
           </div>
           {/* Availability badge — the single most important status signal */}
@@ -113,7 +114,7 @@ export default function IndexPage() {
             className="text-base sm:text-xl md:text-2xl font-medium tracking-tight max-w-3xl leading-snug mb-8 text-on-surface"
           >
             Lead Frontend Architect who ships{" "}
-            <span className="font-extrabold text-black">production-grade React systems at scale</span>
+            <span className="font-extrabold text-black">production-grade frontend systems at scale</span>
             {" "}— and uses{" "}
             <span className="font-extrabold text-black">AI tooling</span> to deliver
             more, faster, and at lower cost than any team at my level.
@@ -288,11 +289,11 @@ export default function IndexPage() {
           {[
             {
               period: "Dec 2024 — Present",
-              role: "Lead React Developer",
+              role: "Lead Frontend Developer",
               company: "Onrois · Surat",
               tag: "Current",
               wins: ["Team of 12 engineers led", "30% faster load via SSR/SSG", "Micro-frontend migration", "Storybook UI library shipped"],
-              desc: "Leading the architectural migration from monolith to micro-frontends across multiple Next.js products. Defining global frontend standards, owning delivery quality, and mentoring 12 engineers.",
+              desc: "Leading the architectural migration from monolith to micro-frontends across multiple web products. Defining global frontend standards, owning delivery quality, and mentoring 12 engineers.",
             },
             {
               period: "Nov 2021 — Dec 2024",
@@ -308,7 +309,7 @@ export default function IndexPage() {
               company: "TechStaunch · Surat",
               tag: null,
               wins: ["15% faster project turnaround"],
-              desc: "Built responsive interfaces with React, Next.js, and TypeScript — first production TypeScript experience.",
+              desc: "Built responsive interfaces with modern frontend tools and TypeScript — first production TypeScript experience.",
             },
             {
               period: "Mar 2021 — Jul 2021",
