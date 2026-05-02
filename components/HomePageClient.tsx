@@ -146,12 +146,13 @@ export default function HomePageClient() {
               View Projects
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
-            <Link
-              href="/archives"
+            <a
+              href="/ishan-vaghasiya-cv.pdf"
+              download
               className="border border-black px-10 py-4 text-[10px] font-bold uppercase tracking-[0.25em] hover:bg-black hover:text-white transition-all"
             >
               Full CV / Resume
-            </Link>
+            </a>
             <Link
               href="/contact"
               className="border border-black/30 px-10 py-4 text-[10px] font-bold uppercase tracking-[0.25em] hover:border-black transition-all text-on-surface-variant"
@@ -374,12 +375,13 @@ export default function HomePageClient() {
               Start a Conversation
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
-            <Link
-              href="/archives"
+            <a
+              href="/ishan-vaghasiya-cv.pdf"
+              download
               className="w-full border border-black px-10 py-5 font-bold uppercase tracking-[0.2em] text-[10px] hover:bg-black hover:text-white transition-all flex items-center justify-center"
             >
               Download Full CV
-            </Link>
+            </a>
             <div className="flex items-center gap-3 p-4 border technical-hairline bg-white">
               <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
               <p className="text-[10px] uppercase tracking-widest font-bold text-on-surface-variant">

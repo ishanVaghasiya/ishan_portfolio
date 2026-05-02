@@ -177,6 +177,7 @@ export default function ContactPageClient() {
                 href={social.href}
                 target={social.href.startsWith("http") ? "_blank" : "_self"}
                 rel="noopener noreferrer"
+                download={social.href === "/ishan-vaghasiya-cv.pdf"}
                 className="group flex items-center gap-4 p-4 bg-white border technical-hairline hover:border-black hover:bg-black hover:text-white transition-all duration-200"
               >
                 <div className="shrink-0">{social.icon}</div>
