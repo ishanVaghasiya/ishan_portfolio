@@ -9,27 +9,27 @@ export default function ArchivesPage() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.4, ease: "easeInOut" }}
-      className="max-w-7xl mx-auto px-6 md:px-8 pt-28 pb-24"
+      className="max-w-7xl mx-auto px-4 md:px-8 pt-20 md:pt-28 pb-16 md:pb-24"
     >
       {/* ─── Header — confident, not bureaucratic ─── */}
-      <header className="mb-20 border-b technical-hairline pb-16">
-        <div className="flex flex-col md:flex-row justify-between items-end gap-8">
+      <header className="mb-12 md:mb-20 border-b technical-hairline pb-10 md:pb-16">
+        <div className="flex flex-col gap-8">
           <div>
             <div className="flex items-center gap-4 mb-4">
               <span className="text-[10px] uppercase tracking-widest text-on-surface-variant font-medium">
-                Resume + Leadership Record
+                CV · IV-2024
               </span>
-              <div className="h-px w-12 bg-[#0f1117]/10" />
+              <div className="h-px w-12 bg-black/10" />
               <span className="text-[10px] uppercase tracking-widest text-on-surface-variant font-medium">
-                Frontend Architecture · AI-augmented Delivery
+                Lead Frontend Architect
               </span>
             </div>
-            <h1 className="text-6xl md:text-8xl font-extrabold tracking-tighter uppercase leading-[0.88]">
+            <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tighter uppercase leading-[0.9]">
               Ishan<br />Vaghasiya
             </h1>
           </div>
           {/* The positioning statement — prominent, not buried */}
-          <blockquote className="max-w-xs border-l-4 border-black pl-6">
+          <blockquote className="max-w-full md:max-w-xs border-l-4 border-black pl-5">
             <p className="text-base md:text-lg font-medium leading-snug italic">
               "Performance is not a feature. It is the foundation."
             </p>
@@ -40,7 +40,7 @@ export default function ArchivesPage() {
         </div>
       </header>
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
 
         {/* ─── Sidebar ─── */}
         <aside className="lg:col-span-4 space-y-12">
@@ -60,7 +60,7 @@ export default function ArchivesPage() {
           </section>
 
           {/* Availability */}
-          <section className="bg-[#0f1117] text-white p-6">
+          <section className="bg-black text-white p-5">
             <div className="flex items-center gap-2 mb-3">
               <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
               <span className="text-[10px] uppercase tracking-widest font-bold">Currently Available</span>
@@ -172,12 +172,12 @@ export default function ArchivesPage() {
 
         {/* ─── Main Content ─── */}
         <div className="lg:col-span-8 relative">
-          <div className="absolute left-0 top-0 bottom-0 w-px bg-[#0f1117]/10" />
-          <div className="space-y-20 pl-12">
+          <div className="hidden lg:block absolute left-0 top-0 bottom-0 w-px bg-black/10" />
+          <div className="space-y-16 lg:pl-12">
 
             {/* ─── AI-Augmented Development section on CV ─── */}
             <article>
-              <div className="flex flex-col md:flex-row md:justify-between md:items-baseline mb-6 border-b technical-hairline pb-4 gap-2">
+              <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline mb-5 border-b technical-hairline pb-4 gap-1">
                 <div>
                   <h3 className="text-2xl font-bold tracking-tight uppercase">AI-Augmented Delivery</h3>
                   <p className="text-on-surface-variant text-sm font-medium">Systematic Workflow Integration</p>
@@ -193,7 +193,7 @@ export default function ArchivesPage() {
                 faster handoffs — at lower cost for every client.
               </p>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
                 {[
                   {
                     icon: <Code2 className="w-4 h-4" />,
@@ -225,7 +225,7 @@ export default function ArchivesPage() {
                 ))}
               </div>
 
-              <div className="bg-[#0f1117] text-white p-6">
+              <div className="bg-black text-white p-5">
                 <p className="text-sm font-light leading-relaxed">
                   "What takes a typical team <strong>2 sprints</strong>, I deliver in{" "}
                   <strong>1</strong> — same quality bar. AI doesn't replace judgment. It compresses execution time."
@@ -284,10 +284,10 @@ export default function ArchivesPage() {
               },
             ].map((job, idx) => (
               <article key={idx} className="relative">
-                <div className="absolute -left-[52.5px] top-2 w-2 h-2 bg-[#0f1117]" />
-                <div className="flex flex-col md:flex-row md:justify-between md:items-baseline mb-6 border-b technical-hairline pb-4 gap-2">
+                <div className="hidden lg:block absolute -left-[52.5px] top-2 w-2 h-2 bg-black" />
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline mb-5 border-b technical-hairline pb-4 gap-1">
                   <div>
-                    <h3 className="text-2xl font-bold tracking-tight uppercase">{job.company}</h3>
+                    <h3 className="text-lg md:text-2xl font-bold tracking-tight uppercase">{job.company}</h3>
                     <p className="text-on-surface-variant text-sm font-medium">{job.role} · {job.location}</p>
                   </div>
                   <span className="text-[10px] uppercase tracking-widest font-bold shrink-0">{job.period}</span>

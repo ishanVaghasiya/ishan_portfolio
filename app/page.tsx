@@ -73,13 +73,13 @@ const AI_ITEMS = [
 
 export default function IndexPage() {
   return (
-    <div className="max-w-7xl mx-auto px-6 md:px-8 pt-28 pb-24">
+    <div className="max-w-7xl mx-auto px-4 md:px-8 pt-20 md:pt-28 pb-16 md:pb-24">
 
       {/* ─── HERO — Everything above the fold ─── */}
-      <header className="min-h-[85vh] flex flex-col justify-between border-b technical-hairline pb-16">
+      <header className="min-h-[75vh] sm:min-h-[85vh] flex flex-col justify-between border-b technical-hairline pb-12 md:pb-16">
 
         {/* Top meta row */}
-        <motion.div {...FADE_UP(0)} className="flex items-center justify-between">
+        <motion.div {...FADE_UP(0)} className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-center gap-4">
             <span className="text-[10px] uppercase tracking-[0.3em] font-semibold text-on-surface-variant">
               Lead Frontend Architect
@@ -90,9 +90,9 @@ export default function IndexPage() {
             </span>
           </div>
           {/* Availability badge — the single most important status signal */}
-          <div className="flex items-center gap-2 border border-black px-4 py-2">
+          <div className="flex items-center gap-2 border border-black px-3 py-2 w-full sm:w-auto">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse block" />
-            <span className="text-[10px] font-bold uppercase tracking-[0.2em]">
+            <span className="text-[10px] font-bold uppercase tracking-[0.15em] leading-tight">
               Open to Opportunities · Remote · Worldwide
             </span>
           </div>
@@ -102,7 +102,7 @@ export default function IndexPage() {
         <div>
           <motion.h1
             {...FADE_UP(0.1)}
-            className="text-[clamp(3.5rem,10vw,9rem)] font-extrabold tracking-tighter leading-[0.88] mb-6"
+            className="text-[clamp(2.2rem,7vw,5.5rem)] font-extrabold tracking-tighter leading-[0.9] mb-5"
           >
             Ishan<br />Vaghasiya
           </motion.h1>
@@ -110,7 +110,7 @@ export default function IndexPage() {
           {/* THE ONE CLAIM — scannable in 2 seconds */}
           <motion.p
             {...FADE_UP(0.2)}
-            className="text-xl md:text-3xl font-medium tracking-tight max-w-3xl leading-snug mb-10 text-on-surface"
+            className="text-base sm:text-xl md:text-2xl font-medium tracking-tight max-w-3xl leading-snug mb-8 text-on-surface"
           >
             Lead Frontend Architect who ships{" "}
             <span className="font-extrabold text-black">production-grade React systems at scale</span>
@@ -137,7 +137,7 @@ export default function IndexPage() {
           </motion.div>
 
           {/* CTAs */}
-          <motion.div {...FADE_UP(0.4)} className="flex flex-wrap gap-4">
+          <motion.div {...FADE_UP(0.4)} className="flex flex-col sm:flex-row flex-wrap gap-3">
             <Link
               href="/projects"
               className="bg-black text-white px-10 py-4 text-[10px] font-bold uppercase tracking-[0.25em] hover:bg-black/80 transition-all flex items-center gap-2 group"
@@ -168,7 +168,7 @@ export default function IndexPage() {
             <span className="text-[10px] uppercase tracking-[0.3em] font-bold text-on-surface-variant block mb-3">
               Section 01 · Competitive Advantage
             </span>
-            <h2 className="text-4xl md:text-6xl font-extrabold tracking-tighter leading-none">
+            <h2 className="text-3xl md:text-5xl font-extrabold tracking-tighter leading-none">
               AI-Augmented<br />Development
             </h2>
           </div>
@@ -180,7 +180,7 @@ export default function IndexPage() {
 
         {/* The value statement — bold and impossible to miss */}
         <div className="bg-black text-white p-8 md:p-12 mb-10">
-          <p className="text-lg md:text-2xl font-light leading-relaxed max-w-3xl">
+          <p className="text-sm md:text-xl font-light leading-relaxed max-w-3xl">
             "What takes a typical team{" "}
             <span className="font-extrabold">2 sprints</span>, I deliver in{" "}
             <span className="font-extrabold">1</span> — with the same quality bar.
@@ -236,7 +236,7 @@ export default function IndexPage() {
           </span>
           <h3 className="text-[10px] uppercase tracking-[0.3em] font-bold">Core Stack & Competencies</h3>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-5 border technical-hairline divide-x divide-y technical-hairline">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 border technical-hairline divide-y md:divide-x technical-hairline">
           {[
             {
               title: "Frameworks",
@@ -319,7 +319,7 @@ export default function IndexPage() {
               desc: "First exposure to professional React development, Git workflows, and Agile scrum practices.",
             },
           ].map((job, idx) => (
-            <div key={idx} className="group grid grid-cols-1 md:grid-cols-12 gap-6 py-10 px-2 hover:bg-white transition-colors">
+            <div key={idx} className="group grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-6 py-8 md:py-10 px-2 hover:bg-white transition-colors">
               <div className="md:col-span-2">
                 <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-on-surface-variant leading-relaxed">
                   {job.period}
@@ -357,7 +357,7 @@ export default function IndexPage() {
             <p className="text-[10px] uppercase tracking-[0.3em] font-bold text-on-surface-variant mb-4">
               Ready to build?
             </p>
-            <h2 className="text-4xl md:text-6xl font-extrabold tracking-tighter leading-none mb-6">
+            <h2 className="text-3xl md:text-5xl font-extrabold tracking-tighter leading-none mb-5">
               Let's ship something great — faster than you'd expect.
             </h2>
             <p className="text-on-surface-variant text-sm leading-relaxed max-w-md">

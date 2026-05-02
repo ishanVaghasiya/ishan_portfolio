@@ -7,7 +7,6 @@ import { Icons } from "@/icons";
 export default function ContactPage() {
   const [copied, setCopied] = useState<string | null>(null);
   const [formState, setFormState] = useState<"idle" | "sending" | "sent" | "error">("idle");
-  const FORMSPREE_ENDPOINT = process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT;
 
   const copy = (text: string, label: string) => {
     navigator.clipboard.writeText(text);
@@ -15,42 +14,29 @@ export default function ContactPage() {
     setTimeout(() => setCopied(null), 2000);
   };
 
+  // Wire this up to EmailJS / Resend / Formspree in production
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setFormState("sending");
     const form = e.currentTarget;
     const data = new FormData(form);
-    const name = String(data.get("name") || "");
-    const email = String(data.get("email") || "");
-    const company = String(data.get("company") || "");
-    const message = String(data.get("message") || "");
 
-    if (FORMSPREE_ENDPOINT) {
-      try {
-        const res = await fetch(FORMSPREE_ENDPOINT, {
-          method: "POST",
-          body: data,
-          headers: { Accept: "application/json" },
-        });
-        if (res.ok) {
-          setFormState("sent");
-          form.reset();
-          return;
-        }
-        setFormState("error");
-      } catch {
+    try {
+      // Replace with your Formspree endpoint: https://formspree.io/f/YOUR_ID
+      const res = await fetch("https://formspree.io/f/YOUR_FORMSPREE_ID", {
+        method: "POST",
+        body: data,
+        headers: { Accept: "application/json" },
+      });
+      if (res.ok) {
+        setFormState("sent");
+        form.reset();
+      } else {
         setFormState("error");
       }
-      return;
+    } catch {
+      setFormState("error");
     }
-
-    const subject = encodeURIComponent(`Portfolio inquiry from ${name || "Guest"}`);
-    const body = encodeURIComponent(
-      `Name: ${name}\nEmail: ${email}\nCompany: ${company}\n\nMessage:\n${message}`
-    );
-    window.location.href = `mailto:ishanvaghasiya2786@gmail.com?subject=${subject}&body=${body}`;
-    setFormState("sent");
-    form.reset();
   };
 
   return (
@@ -58,25 +44,25 @@ export default function ContactPage() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.4, ease: "easeInOut" }}
-      className="max-w-7xl mx-auto px-6 md:px-8 pt-28 pb-24"
+      className="max-w-7xl mx-auto px-4 md:px-8 pt-20 md:pt-28 pb-16 md:pb-24"
     >
       {/* ─── Header ─── */}
-      <header className="mb-20 border-b technical-hairline pb-16">
-        <div className="flex flex-col md:flex-row justify-between items-end gap-8">
+      <header className="mb-12 md:mb-20 border-b technical-hairline pb-10 md:pb-16">
+        <div className="flex flex-col gap-8">
           <div>
             <div className="flex items-center gap-3 mb-4">
               <span className="text-[10px] uppercase tracking-[0.3em] font-semibold text-on-surface-variant">
                 Let's Work Together
               </span>
-              <div className="h-px flex-grow bg-[#0f1117]/10 max-w-24" />
+              <div className="h-px flex-grow bg-black/10 max-w-24" />
             </div>
-            <h1 className="text-6xl md:text-[8rem] font-extrabold tracking-tighter leading-none">
+            <h1 className="text-4xl sm:text-6xl md:text-8xl font-extrabold tracking-tighter leading-[0.9]">
               Get In<br />Touch
             </h1>
           </div>
           {/* Availability — visible immediately, not buried */}
           <div className="space-y-3 max-w-xs">
-            <div className="flex items-center gap-2 border border-black px-4 py-3">
+            <div className="flex items-center gap-2 border border-black px-3 py-2 w-full sm:w-auto">
               <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
               <span className="text-[10px] font-bold uppercase tracking-[0.2em]">
                 Available Now · Full-time Remote
@@ -93,7 +79,7 @@ export default function ContactPage() {
         </div>
       </header>
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
 
         {/* ─── Left — Direct Contact ─── */}
         <div className="lg:col-span-5 space-y-5">
@@ -109,7 +95,7 @@ export default function ContactPage() {
             className="w-full group flex items-center justify-between p-6 bg-white border technical-hairline hover:border-black transition-all duration-200"
           >
             <div className="flex items-center gap-5">
-              <div className="p-3 border technical-hairline group-hover:bg-[#0f1117] group-hover:text-white transition-all">
+              <div className="p-3 border technical-hairline group-hover:bg-black group-hover:text-white transition-all">
                 <Icons.Mail className="w-5 h-5" />
               </div>
               <div className="text-left">
@@ -128,7 +114,7 @@ export default function ContactPage() {
             className="w-full group flex items-center justify-between p-6 bg-white border technical-hairline hover:border-black transition-all duration-200"
           >
             <div className="flex items-center gap-5">
-              <div className="p-3 border technical-hairline group-hover:bg-[#0f1117] group-hover:text-white transition-all">
+              <div className="p-3 border technical-hairline group-hover:bg-black group-hover:text-white transition-all">
                 <Icons.Phone className="w-5 h-5" />
               </div>
               <div className="text-left">
@@ -161,7 +147,7 @@ export default function ContactPage() {
               Find Me Online
             </span>
           </div>
-          <div className="grid grid-cols-1 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {[
               {
                 label: "LinkedIn",
@@ -196,7 +182,7 @@ export default function ContactPage() {
                 href={social.href}
                 target={social.href.startsWith("http") ? "_blank" : "_self"}
                 rel="noopener noreferrer"
-                className="group flex items-center gap-4 p-4 bg-white border technical-hairline hover:border-black hover:bg-[#0f1117] hover:text-white transition-all duration-200"
+                className="group flex items-center gap-4 p-4 bg-white border technical-hairline hover:border-black hover:bg-black hover:text-white transition-all duration-200"
               >
                 <div className="shrink-0">{social.icon}</div>
                 <div className="flex-grow">
@@ -235,7 +221,7 @@ export default function ContactPage() {
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <label className="text-[10px] uppercase tracking-[0.2em] font-bold text-on-surface-variant block">
                     Full Name *
@@ -278,7 +264,7 @@ export default function ContactPage() {
                 <label className="text-[10px] uppercase tracking-[0.2em] font-bold text-on-surface-variant block">
                   Engagement Type *
                 </label>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                <div className="grid grid-cols-2 gap-2 md:gap-3">
                   {["Full-time", "Freelance", "Consulting", "Other"].map((type) => (
                     <label
                       key={type}
@@ -310,17 +296,17 @@ export default function ContactPage() {
                 </p>
               )}
 
-              <div className="flex flex-col md:flex-row gap-4 pt-2">
+              <div className="flex flex-col sm:flex-row gap-3 pt-2">
                 <button
                   type="submit"
                   disabled={formState === "sending"}
-                  className="flex-grow bg-[#0f1117] text-white px-10 py-5 text-[10px] font-bold tracking-[0.3em] uppercase hover:opacity-90 transition-all disabled:opacity-50"
+                  className="flex-grow bg-black text-white px-10 py-5 text-[10px] font-bold tracking-[0.3em] uppercase hover:opacity-90 transition-all disabled:opacity-50"
                 >
                   {formState === "sending" ? "Sending..." : "Send Message"}
                 </button>
                 <a
                   href="mailto:ishanvaghasiya2786@gmail.com"
-                  className="flex items-center justify-center gap-2 border border-black px-8 py-5 text-[10px] font-bold tracking-[0.2em] uppercase hover:bg-[#0f1117] hover:text-white transition-all"
+                  className="flex items-center justify-center gap-2 border border-black px-8 py-5 text-[10px] font-bold tracking-[0.2em] uppercase hover:bg-black hover:text-white transition-all"
                 >
                   <Icons.Mail className="w-4 h-4" />
                   Email Directly
@@ -330,7 +316,7 @@ export default function ContactPage() {
           )}
 
           {/* Availability Banner */}
-          <div className="mt-10 p-6 bg-[#0f1117] text-white flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div className="mt-8 p-5 md:p-6 bg-black text-white flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <div>
               <div className="flex items-center gap-3 mb-1">
                 <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />

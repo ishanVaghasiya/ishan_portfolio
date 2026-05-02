@@ -9,29 +9,29 @@ export default function ProjectsPage() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.4, ease: "easeInOut" }}
-      className="max-w-7xl mx-auto px-6 md:px-8 pt-28 pb-24"
+      className="max-w-7xl mx-auto px-4 md:px-8 pt-20 md:pt-28 pb-16 md:pb-24"
     >
       {/* ─── Header — outcome-first, not just a label ─── */}
-      <header className="mb-20 border-b technical-hairline pb-16">
+      <header className="mb-12 md:mb-20 border-b technical-hairline pb-10 md:pb-16">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
           <div>
             <div className="flex items-center gap-3 mb-4">
               <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-on-surface-variant">
-                Selected Work
+                Technical Portfolio
               </span>
-              <div className="w-[1px] h-4 bg-[#0f1117]/10" />
+              <div className="w-[1px] h-4 bg-black/10" />
               <span className="text-[10px] uppercase tracking-[0.2em] font-medium text-on-surface-variant">
-                Outcomes, scale, and delivery
+                IV — 2024
               </span>
             </div>
-            <h1 className="text-6xl md:text-8xl font-extrabold tracking-tighter text-black leading-none">
-              Portfolio That Moves Metrics
+            <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tighter text-black leading-none">
+              PROJECTS
             </h1>
           </div>
           <div className="max-w-sm space-y-3">
             <p className="text-on-surface-variant text-sm leading-relaxed">
               Production systems built across enterprise SaaS, AI tooling, geospatial
-              visualization, and document processing — each with visible business impact.
+              visualization, and document processing — each with measurable business impact.
             </p>
             {/* Quick-scan outcome chips */}
             <div className="flex flex-wrap gap-2">
@@ -52,14 +52,14 @@ export default function ProjectsPage() {
       <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
 
         {/* ─── Featured — GO-Manage ─── */}
-        <section className="md:col-span-8 bg-white border technical-hairline p-8 md:p-12 flex flex-col justify-between">
+        <section className="col-span-12 md:col-span-8 bg-white border technical-hairline p-6 md:p-12 flex flex-col justify-between">
           <div>
             <div className="flex justify-between items-start mb-10">
               <div>
                 <span className="text-[9px] font-bold uppercase tracking-widest text-black/30 block mb-2">
                   Featured Project
                 </span>
-                <h2 className="text-4xl font-bold tracking-tight text-black mb-2">GO-MANAGE</h2>
+                <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-black mb-2">GO-MANAGE</h2>
                 <p className="text-on-surface-variant text-xs font-bold uppercase tracking-widest">
                   Salon & Beauty — Appointment Management SaaS · Ireland
                 </p>
@@ -68,14 +68,14 @@ export default function ProjectsPage() {
                 href="https://www.gomanage.ie/beautysalon/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-4 bg-background border technical-hairline hover:bg-[#0f1117] hover:text-white transition-all"
+                className="p-4 bg-background border technical-hairline hover:bg-black hover:text-white transition-all"
               >
                 <ExternalLink className="w-5 h-5" />
               </a>
             </div>
 
             {/* Business outcome FIRST, then tech detail */}
-            <div className="bg-[#eeeeee] border technical-hairline p-6 mb-10">
+            <div className="bg-[#eeeeee] border technical-hairline p-5 mb-8">
               <h3 className="text-[10px] uppercase tracking-widest font-bold text-black mb-2">Business Outcome</h3>
               <p className="text-base font-medium text-on-surface leading-relaxed">
                 A full-featured SaaS serving <strong>5,000+ bi-weekly users</strong> with real-time
@@ -96,7 +96,7 @@ export default function ProjectsPage() {
               <h3 className="text-[10px] uppercase tracking-widest font-bold text-black mb-6">
                 Engineering Highlights
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 {[
                   {
                     num: "01", title: "Real-time Updates",
@@ -136,7 +136,7 @@ export default function ProjectsPage() {
               href="https://www.gomanage.ie/beautysalon/"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-[#0f1117] text-white px-8 py-3 text-[10px] font-bold tracking-widest uppercase hover:opacity-90 transition-all"
+              className="bg-black text-white px-8 py-3 text-[10px] font-bold tracking-widest uppercase hover:opacity-90 transition-all"
             >
               Visit Live
             </a>
@@ -144,7 +144,7 @@ export default function ProjectsPage() {
         </section>
 
         {/* Stats Sidebar */}
-        <aside className="md:col-span-4 bg-[#0f1117] text-white border technical-hairline p-8 md:p-10 flex flex-col justify-between gap-10">
+        <aside className="col-span-12 md:col-span-4 bg-black text-white border technical-hairline p-6 md:p-10 flex flex-col justify-between gap-8">
           <div>
             <span className="text-[10px] block font-bold uppercase tracking-[0.2em] mb-8 text-white/50">
               Measurable Impact
@@ -181,7 +181,7 @@ export default function ProjectsPage() {
         </aside>
 
         {/* ─── SwiftResume ─── */}
-        <section className="md:col-span-6 bg-white border technical-hairline p-8 md:p-10 flex flex-col hover:border-black transition-colors duration-300">
+        <section className="col-span-12 md:col-span-6 bg-white border technical-hairline p-6 md:p-10 flex flex-col hover:border-black transition-colors duration-300">
           <div className="flex justify-between items-start mb-6">
             <div>
               <span className="text-[9px] font-bold uppercase tracking-widest text-black/30 block mb-2">
@@ -196,7 +196,7 @@ export default function ProjectsPage() {
               href="https://www.swiftresume.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 border technical-hairline hover:bg-[#0f1117] hover:text-white transition-all"
+              className="p-2 border technical-hairline hover:bg-black hover:text-white transition-all"
             >
               <ExternalLink className="w-4 h-4" />
             </a>
@@ -212,21 +212,10 @@ export default function ProjectsPage() {
 
           <div className="mb-8 flex-grow">
             <h3 className="text-[10px] uppercase tracking-widest font-bold text-black mb-3">What Was Built</h3>
-            <p className="text-sm font-normal text-on-surface leading-loose mb-4">
+            <p className="text-sm font-normal text-on-surface leading-loose mb-6">
               Full-stack AI resume builder on Next.js 15 + Payload CMS. Collects structured user
               inputs, generates tailored resume content via OpenAI, and produces download-ready PDFs.
             </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
-              {[
-                { label: "Launch Speed", value: "3 min resume build" },
-                { label: "User Reach", value: "20k+ resumes generated" },
-              ].map((stat, i) => (
-                <div key={i} className="bg-[#f8f8f8] border technical-hairline p-4">
-                  <p className="text-[10px] uppercase tracking-[0.2em] text-on-surface-variant font-bold mb-2">{stat.label}</p>
-                  <p className="font-bold text-base">{stat.value}</p>
-                </div>
-              ))}
-            </div>
             <ul className="space-y-3">
               {[
                 "OpenAI integration for structured, job-specific resume content generation.",
@@ -260,7 +249,7 @@ export default function ProjectsPage() {
         </section>
 
         {/* ─── LUBI Portal ─── */}
-        <section className="md:col-span-6 bg-white border technical-hairline p-8 md:p-10 flex flex-col hover:border-black transition-colors duration-300">
+        <section className="col-span-12 md:col-span-6 bg-white border technical-hairline p-6 md:p-10 flex flex-col hover:border-black transition-colors duration-300">
           <div className="flex justify-between items-start mb-6">
             <div>
               <span className="text-[9px] font-bold uppercase tracking-widest text-black/30 block mb-2">
@@ -275,7 +264,7 @@ export default function ProjectsPage() {
               href="https://www.lubipumps.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 border technical-hairline hover:bg-[#0f1117] hover:text-white transition-all"
+              className="p-2 border technical-hairline hover:bg-black hover:text-white transition-all"
             >
               <ExternalLink className="w-4 h-4" />
             </a>
@@ -291,21 +280,10 @@ export default function ProjectsPage() {
 
           <div className="mb-8 flex-grow">
             <h3 className="text-[10px] uppercase tracking-widest font-bold text-black mb-3">What Was Built</h3>
-            <p className="text-sm font-normal text-on-surface leading-loose mb-4">
+            <p className="text-sm font-normal text-on-surface leading-loose mb-6">
               High-performance heatmap module using Google Maps JS API rendering millions of
               records with dynamic zoom-based aggregation — state → city → pincode.
             </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
-              {[
-                { label: "Scale", value: "Millions of data points" },
-                { label: "Performance", value: "Sub-second response" },
-              ].map((stat, i) => (
-                <div key={i} className="bg-[#f8f8f8] border technical-hairline p-4">
-                  <p className="text-[10px] uppercase tracking-[0.2em] text-on-surface-variant font-bold mb-2">{stat.label}</p>
-                  <p className="font-bold text-base">{stat.value}</p>
-                </div>
-              ))}
-            </div>
             <ul className="space-y-3">
               {[
                 "GeoJSON polygon rendering with seamless state/city/pincode-level transitions.",
@@ -339,15 +317,15 @@ export default function ProjectsPage() {
         </section>
 
         {/* ─── Construction OPS ─── */}
-        <section className="md:col-span-12 bg-[#eeeeee] border technical-hairline p-8 md:p-12 hover:border-black transition-colors duration-300">
+        <section className="col-span-12 bg-[#eeeeee] border technical-hairline p-6 md:p-12 hover:border-black transition-colors duration-300">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
             <div className="md:col-span-5">
               <span className="text-[9px] font-bold uppercase tracking-widest text-black/40 block mb-3">
-                Private Client Product · Operations
+                Document Processing · Canvas
               </span>
               <h2 className="text-3xl font-bold tracking-tight text-black mb-2">CONSTRUCTION-OPS</h2>
               <p className="text-on-surface-variant text-[10px] font-bold uppercase tracking-widest mb-6">
-                PDF Canvas Editing Platform — private beta
+                PDF Canvas Editing Platform
               </p>
               {/* Outcome */}
               <div className="bg-white border technical-hairline p-5 mb-5">
@@ -361,7 +339,7 @@ export default function ProjectsPage() {
                 rendering with full text, shape, and image manipulation on live documents.
               </p>
             </div>
-            <div className="md:col-span-7 grid grid-cols-1 md:grid-cols-3 gap-5">
+            <div className="md:col-span-7 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
               {[
                 {
                   num: "01", title: "Canvas Rendering",
