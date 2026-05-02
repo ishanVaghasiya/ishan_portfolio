@@ -1,3 +1,5 @@
+import { getCurrentYear } from "@/lib/util";
+
 export default function Footer() {
   return (
     <footer className="bg-[#f3f3f3] border-t technical-hairline w-full">
@@ -5,7 +7,7 @@ export default function Footer() {
         <div>
           <div className="font-bold text-black mb-6 tracking-[0.2em]">ISHAN.DEV</div>
           <p className="text-[10px] uppercase tracking-[0.2em] text-on-surface-variant leading-loose">
-            © 2024 ISHAN VAGHASIYA — ALL RIGHTS RESERVED
+            © {getCurrentYear()} ISHAN VAGHASIYA — ALL RIGHTS RESERVED
           </p>
           <p className="text-[10px] uppercase tracking-[0.2em] text-on-surface-variant mt-2 opacity-60">
             Surat, Gujarat, India
@@ -16,10 +18,8 @@ export default function Footer() {
           <div className="flex flex-wrap gap-8">
             {[
               { label: "Email", href: "mailto:ishanvaghasiya2786@gmail.com" },
-              { label: "LinkedIn", href: "https://linkedin.com" },
-              { label: "GitHub", href: "https://github.com" },
-              { label: "Stackoverflow", href: "https://stackoverflow.com" },
-              { label: "Medium", href: "https://medium.com" },
+              { label: "LinkedIn", href: "https://linkedin.com/in/ishanvaghasiya" },
+              { label: "GitHub", href: "https://github.com/ishanvaghasiya" },
             ].map((link) => (
               <a
                 key={link.label}
