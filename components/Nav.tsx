@@ -44,7 +44,7 @@ export default function Nav() {
             href="/"
             className="font-semibold text-lg tracking-[0.2em] text-black cursor-pointer"
           >
-            ISHAN.DEV - ARCHITECT.V1
+            ARCHITECT.V1
           </Link>
 
           <div className="hidden md:flex gap-8 items-center font-medium text-[11px] tracking-widest">
